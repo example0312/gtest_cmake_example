@@ -12,13 +12,13 @@ SET(INCLUDE_DIR include)
 # SOURCE 파일 위치
 SET(SRC_DIR src)
 
-# main.cpp 위치
-SET(MAIN_SRC ${SRC_DIR}/main.cpp)
+# main.cc 위치
+SET(MAIN_SRC ${SRC_DIR}/main.cc)
 
-# SOURCE cpp 파일 위치(main.cpp 제외)
+# SOURCE cc 파일 위치(main.cc 제외)
 SET(SRCS
-    ${SRC_DIR}/hello.cpp
-    ${SRC_DIR}/bye.cpp
+    ${SRC_DIR}/hello.cc
+    ${SRC_DIR}/bye.cc
 )
 
 PROJECT(${PROJECT_NAME})
@@ -42,13 +42,13 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR} ${INCLUDE_DI
 ################################
 SET(TEST_DIR test)
 
-# (Test1) test/helloTest.cpp 추가
+# (Test1) test/helloTest.cc 추가
 SET(HELLO_TEST helloTest)
 add_executable(${HELLO_TEST} ${SRCS} ${TEST_DIR}/${HELLO_TEST}.cc)
 target_link_libraries(${HELLO_TEST} gtest gtest_main)
 add_test(test ${HELLO_TEST})
 
-# (Test2) test/byeTest.cpp 추가
+# (Test2) test/byeTest.cc 추가
 SET(BYE_TEST byeTest)
 add_executable(${BYE_TEST} ${SRCS} ${TEST_DIR}/${BYE_TEST}.cc)
 target_link_libraries(${BYE_TEST} gtest gtest_main)
